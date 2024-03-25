@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.Chefisa">
+        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">@color/_bg__home_color</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+</resources>

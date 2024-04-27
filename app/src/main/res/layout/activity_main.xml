@@ -1,83 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/_bg__home_color"
     tools:context=".MainActivity"
-    android:fitsSystemWindows="true">
+    tools:ignore="MissingConstraints">
 
     <ImageView
-        android:id="@+id/imgViewChef"
+        android:id="@+id/imgChef"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/imgViewRectanglee"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/chef_ek2" />
+        android:src="@drawable/chef_ek2"
+        style="@style/Centered_Horizontal_At_Top_In_Parent"
+         />
 
     <TextView
         android:id="@+id/txtViewAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/paytone"
         android:text="@string/chefisa_string"
-        android:textColor="@color/white"
-        android:textFontWeight="400"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgViewChef"
-        app:layout_constraintEnd_toEndOf="@+id/imgViewChef"
-        app:layout_constraintStart_toStartOf="@+id/imgViewChef" />
+        android:textAppearance="@style/App_Name_Text"
+        app:layout_constraintStart_toStartOf="@+id/imgChef"
+        app:layout_constraintEnd_toEndOf="@+id/imgChef"
+        app:layout_constraintBottom_toBottomOf="@+id/imgChef"
+        />
 
-    <ImageView
-        android:id="@+id/imgViewRectanglee"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btnLetsStart"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="166dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="@color/_bg__menu_color"
+        android:fontFamily="@font/poppins"
+        android:paddingVertical="16dp"
+        android:text="@string/start_string"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewChef"
-        android:src="@drawable/rectangle_1" />
+        app:layout_constraintEnd_toEndOf="@+id/imgChef"
+        app:layout_constraintStart_toStartOf="@+id/imgChef" />
 
     <ImageView
-        android:id="@+id/imgViewSpoon"
+        android:id="@+id/imgSpoon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="12dp"
-
-
+        android:layout_marginStart="12dp"
         android:background="@drawable/ellipse_1_shape"
         android:padding="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgViewRectanglee"
-        app:layout_constraintStart_toStartOf="@+id/imgViewRectanglee"
-        app:layout_constraintTop_toTopOf="@+id/imgViewRectanglee"
-        android:src="@drawable/spoon_img" />
-
-    <TextView
-        android:id="@+id/txtViewLetsStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/start_string"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/imgViewRectanglee"
-        app:layout_constraintEnd_toEndOf="@+id/imgViewRectanglee"
-        app:layout_constraintStart_toEndOf="@+id/imgViewSpoon"
-        app:layout_constraintTop_toTopOf="@+id/imgViewRectanglee" />
-
-    
-
-
-
+        android:src="@drawable/spoon_img"
+        app:layout_constraintBottom_toBottomOf="@+id/btnLetsStart"
+        app:layout_constraintStart_toStartOf="@+id/btnLetsStart"
+        app:layout_constraintTop_toTopOf="@+id/btnLetsStart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingConstraints">
+
+
+    <EditText
+        android:id="@+id/evEmailOrUsername"
+        style="@style/Custom_Ev"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Email or username"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="26dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/black"
+        android:src="@drawable/mail_img"
+        app:layout_constraintBottom_toBottomOf="@+id/evEmailOrUsername"
+        app:layout_constraintStart_toStartOf="@+id/evEmailOrUsername"
+        app:layout_constraintTop_toTopOf="@+id/evEmailOrUsername" />
+
+
+    <EditText
+        android:id="@+id/evPassword"
+        style="@style/Custom_Ev"
+        android:hint="Password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/evEmailOrUsername"
+        app:layout_constraintStart_toStartOf="@+id/evEmailOrUsername"
+        app:layout_constraintTop_toBottomOf="@+id/evEmailOrUsername" />
+
+    <ImageView
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:backgroundTint="@color/black"
+        android:src="@drawable/lock_image"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/evPassword"
+        app:layout_constraintStart_toStartOf="@+id/evPassword"
+        app:layout_constraintTop_toTopOf="@+id/evPassword" />
+    <EditText
+        android:id="@+id/evRePassword"
+        style="@style/Custom_Ev"
+        android:hint="Enter password again"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:visibility="invisible"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/evPassword"
+        app:layout_constraintStart_toStartOf="@+id/evPassword"
+        app:layout_constraintTop_toBottomOf="@+id/evPassword" />
+
+    <ImageView
+        android:id="@+id/rePasswordLock"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:backgroundTint="@color/black"
+        android:src="@drawable/lock_image"
+        android:layout_marginStart="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/evRePassword"
+        app:layout_constraintStart_toStartOf="@+id/evRePassword"
+        app:layout_constraintTop_toTopOf="@+id/evRePassword" />
+
+
+
+    <TextView
+        android:id="@+id/textWarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text=""
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        style="@style/Centered_Horizontal_In_Parent"
+        app:layout_constraintTop_toBottomOf="@+id/evRePassword" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:background="@drawable/rectangle_1"
+        android:gravity="center"
+        android:paddingBottom="20dp"
+        android:text="Sign in"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:backgroundTint="@color/_bg__home_color"
+        app:layout_constraintTop_toBottomOf="@+id/textWarning"
+        style="@style/Centered_Horizontal_In_Parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

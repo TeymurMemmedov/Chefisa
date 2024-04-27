@@ -1,9 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="AppTheme" parent="Theme.Chefisa">
         <!-- Customize your theme here. -->
         <item name="android:statusBarColor">@color/_bg__home_color</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+
+    <style name="Centered_Horizontal_In_Parent">
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+    </style>
+
+    <style name="Centered_Vertical_In_Parent">
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+    </style>
+
+    <style
+        name="Centered_Horizontal_At_Top_In_Parent"
+        parent="Centered_Horizontal_In_Parent">
+        <item name="layout_constraintTop_toTopOf">parent</item>
+    </style>
+
+    <style
+        name="Centered_Horizontal_At_Bottom_In_Parent"
+        parent="Centered_Horizontal_In_Parent">
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+    </style>
+
+    <style
+        name="Centered_Vertical_At_Start_In_Parent"
+        parent="Centered_Vertical_In_Parent">
+        <item name="layout_constraintStart_toStartOf">parent</item>
+    </style>
+
+    <style
+        name="Centered_Vertical_At_End_In_Parent"
+        parent="Centered_Vertical_In_Parent">
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+    </style>
+
+    <style name="Centered_Full_In_Parent"
+        parent="Centered_Horizontal_In_Parent">
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+    </style>
+
+    <style name="Custom_Ev">
+        <item name="android:textColorHint">@color/black</item>
+        <item name="maxLines">1</item>
+        <item name="android:paddingVertical" tools:targetApi="o">16dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@drawable/custom_ev_bg</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <style name="App_Name_Text">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">50sp</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+        <item name="fontFamily">@font/paytone</item>
+    </style>
+
+    <style name="Tablayout_Text">
+        <item name="android:textSize">22sp</item>
+    </style>
 </resources>

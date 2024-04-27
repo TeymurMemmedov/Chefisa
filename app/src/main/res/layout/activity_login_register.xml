@@ -8,116 +8,37 @@
     tools:context=".LoginRegisterActivity">
 
     <ImageView
-        android:id="@+id/imgViewChef"
+        android:id="@+id/imgChef"
+        style="@style/Centered_Horizontal_At_Top_In_Parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/editTextEmailOrUsername"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/chef_ek2" />
+        app:srcCompat="@drawable/chef_ek2"
+        tools:ignore="MissingConstraints" />
 
-
-    <EditText
-        android:id="@+id/editTextEmailOrUsername"
-        android:layout_width="wrap_content"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_1"
-        android:gravity="center"
-        android:hint="Email or username"
-        android:paddingBottom="10dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTestPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewChef"
-        android:maxLines="1"/>
+        app:layout_constraintBottom_toBottomOf="@+id/imgChef"
+        app:layout_constraintEnd_toEndOf="@+id/imgChef"
+        app:layout_constraintStart_toStartOf="@+id/imgChef"
+        app:tabBackground="@color/_bg__menu_color"
+        app:tabIndicatorColor="@color/_bg__home_color"
+        app:tabTextAppearance="@style/Tablayout_Text"
+        app:tabTextColor="@color/black" />
 
-    <ImageView
-        android:layout_width="26dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="4dp"
-        android:backgroundTint="@color/black"
-        android:src="@drawable/mail_img"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextEmailOrUsername"
-        app:layout_constraintStart_toStartOf="@+id/editTextEmailOrUsername"
-        app:layout_constraintTop_toTopOf="@+id/editTextEmailOrUsername" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpAuth"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/imgChef"
+        app:layout_constraintStart_toStartOf="@+id/imgChef"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
-    <EditText
-        android:id="@+id/editTestPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:layout_marginBottom="52dp"
-        android:background="@drawable/rectangle_1"
-        android:gravity="center"
-        android:hint="Password"
-        android:lines="1"
-        android:inputType="textPassword"
-        android:lineHeight="26dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSignIn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmailOrUsername" />
 
-    <ImageView
-        android:layout_width="26dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/black"
-        android:src="@drawable/lock_image"
-        app:layout_constraintBottom_toBottomOf="@+id/editTestPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTestPassword"
-        app:layout_constraintTop_toTopOf="@+id/editTestPassword" />
-
-    <Button
-        android:id="@+id/buttonSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:background="@drawable/rectangle_1"
-        android:gravity="center"
-        android:paddingBottom="20dp"
-        android:text="Sign in"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:backgroundTint="@color/_bg__home_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTestPassword" />
-
-    <TextView
-        android:id="@+id/textWarning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="@android:color/holo_red_light"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSignIn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTestPassword" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/dont_have_account"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSignIn"
-        app:layout_constraintVertical_bias="0.5"
-        android:layout_marginVertical="16dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

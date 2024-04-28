@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="myColor">#008577</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
@@ -20,6 +21,7 @@
     <color name="_bg__text_ek1_color">#000000</color>
     <color name="sign_in_color">#9D9D9D</color>
     <color name="sign_up_ek1_color">#FFFFFF</color>
-
     <color name="_bg__menu_color">#FFEFE9</color>
+
+
 </resources>

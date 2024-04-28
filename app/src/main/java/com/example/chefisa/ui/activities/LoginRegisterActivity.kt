@@ -1,41 +1,25 @@
-package com.example.chefisa
+package com.example.chefisa.ui.activities
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.view.KeyEvent
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import androidx.annotation.RequiresApi
-import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.chefisa.databinding.ActivityLoginRegisterBinding
+import com.example.chefisa.adapters.LoginRegisterTabsStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
-
+@RequiresApi(Build.VERSION_CODES.P)
+@SuppressLint("NewApi")
 class LoginRegisterActivity : AppCompatActivity() {
     private val symbolicUserName = "admin"
     private val symbolicPassword = "admin123"
 
     private lateinit var binding:ActivityLoginRegisterBinding
 
-    @RequiresApi(Build.VERSION_CODES.P)
 
-    fun moveCursorToStartWhenEnterPressed(editText: EditText){
-        editText.setOnKeyListener { _, keyCode, event ->
-            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
-                editText.setSelection(0)
-                return@setOnKeyListener true
-            }
-            return@setOnKeyListener false
-        }
 
-    }
 
-    @SuppressLint("NewApi")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginRegisterBinding.inflate(layoutInflater)

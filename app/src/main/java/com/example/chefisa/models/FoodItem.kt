@@ -1,4 +1,4 @@
-package com.example.chefisa
+package com.example.chefisa.models
 
 data class FoodItem(
     val name: String,

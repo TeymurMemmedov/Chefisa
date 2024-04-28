@@ -1,4 +1,4 @@
-package com.example.chefisa
+package com.example.chefisa.ui.abstractFragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

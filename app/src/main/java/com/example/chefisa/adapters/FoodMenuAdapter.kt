@@ -1,4 +1,4 @@
-package com.example.chefisa
+package com.example.chefisa.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.chefisa.models.FoodItem
+import com.example.chefisa.R
 
 class FoodMenuAdapter(private val context: Context, private val foodList: List<FoodItem>) : RecyclerView.Adapter<FoodMenuAdapter.ViewHolder>() {
 

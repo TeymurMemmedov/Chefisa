@@ -1,9 +1,12 @@
-package com.example.chefisa
+package com.example.chefisa.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.chefisa.R
+import com.example.chefisa.adapters.FoodMenuAdapter
+import com.example.chefisa.models.FoodItem
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

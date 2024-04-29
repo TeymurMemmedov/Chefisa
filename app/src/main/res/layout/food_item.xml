@@ -25,7 +25,4 @@
         android:fontFamily="@font/poppreg"
         android:textAlignment="center" />
 
-
-
-
 </LinearLayout>

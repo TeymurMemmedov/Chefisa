@@ -45,8 +45,7 @@ class RegisterFragment:BaseFragment<FragmentRegisterBinding>(
 
                 result.third?.let { user ->
                     executeDelayed(500) {
-                        val intent = Intent(requireContext(), LoginRegisterActivity::class.java)
-                        intent.putExtra("USER", user)
+                        val intent = Intent(requireContext(), MenuActivity::class.java)
                         startActivity(intent)
                         inputs.forEach { it.text.clear() }
                         binding.textWarning.text = ""

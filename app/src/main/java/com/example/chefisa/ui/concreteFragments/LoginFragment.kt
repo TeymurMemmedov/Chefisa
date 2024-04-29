@@ -67,12 +67,6 @@ class LoginFragment(): BaseFragment<FragmentLoginBinding>(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        userData = arguments?.getSerializable("USER") as? User
-        if(userData!=null){
-            login.setValueEmailOrUsername(userData!!.email)
-            login.setValuePassword(userData!!.password)
-        }
-
     }
 
 

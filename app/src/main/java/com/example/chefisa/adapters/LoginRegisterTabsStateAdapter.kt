@@ -9,16 +9,13 @@ import com.example.chefisa.ui.concreteFragments.LoginFragment
 import com.example.chefisa.ui.concreteFragments.RegisterFragment
 
 
-class LoginRegisterTabsStateAdapter(activity:FragmentActivity,val userData: User?): FragmentStateAdapter(activity) {
+class LoginRegisterTabsStateAdapter(activity:FragmentActivity): FragmentStateAdapter(activity) {
     override fun getItemCount(): Int = 2
 
     override fun createFragment(position: Int): Fragment {
         return when(position){
             0-> {
                 val loginF  = LoginFragment()
-                if(userData!=null){
-                    loginF.arguments = Bundle().also { it.putSerializable("USER",userData) }
-                }
                 loginF
             }
 

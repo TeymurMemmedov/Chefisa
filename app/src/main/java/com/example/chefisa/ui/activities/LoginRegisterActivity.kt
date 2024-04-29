@@ -27,12 +27,10 @@ class LoginRegisterActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         val user  = intent.getSerializableExtra("USER") as? User
-        if(user!=null){
-            binding.vpAuth.adapter = LoginRegisterTabsStateAdapter(this,user)
-        }
-        else{
-            binding.vpAuth.adapter = LoginRegisterTabsStateAdapter(this,null)
-        }
+
+            binding.vpAuth.adapter = LoginRegisterTabsStateAdapter(this)
+
+
 
 
 

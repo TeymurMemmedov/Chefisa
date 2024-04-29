@@ -1,7 +1,7 @@
 # Chefisa - Fast Food Ordering App
 
 Chefisa is a fast food ordering app designed for Android devices. 
-It provides a convenient way for users to browse food items, place orders, and simulate the authentication process.
+It provides a convenient way for users to browse food items, place orders, and simulate the authentication and validation process.
 
 ---
 
@@ -18,7 +18,8 @@ It provides a convenient way for users to browse food items, place orders, and s
 ## Introduction
 
 Chefisa is my first project developed in the Android environment. 
-It aims to demonstrate fundamental app development concepts such as UI design, user authentication simulation, and data presentation using RecyclerView.
+It aims to demonstrate fundamental app development concepts such as UI design, user authentication simulation, 
+View Binding, Data Binding, Fragments and their managing, and data presentation using RecyclerView.
 
 ---
 
@@ -31,6 +32,9 @@ It aims to demonstrate fundamental app development concepts such as UI design, u
 2. **Authentication Page**:
     - Simulates the user authentication process.
     - Symbolic username and password for demonstration purposes.
+    - Detailed validation
+    - Sign In/Sign Up with customized TabLayout&ViewPager2
+    - Data binding and View Binding
 
 3. **Menu Page**:
     - Shows a grid layout of food items available for ordering.
@@ -43,7 +47,7 @@ It aims to demonstrate fundamental app development concepts such as UI design, u
 
 
 
-https://github.com/TeymurMemmedov/Chefisa/assets/96992737/f50dc93f-cb93-4007-838d-4a8376f3fe31
+https://github.com/TeymurMemmedov/Chefisa/assets/96992737/92435af2-8f86-4853-8b1f-453c29fbb9c2
 
 
 

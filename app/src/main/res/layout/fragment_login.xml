@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
@@ -10,11 +12,8 @@
 
 
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="0dp">
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/evEmailOrUsername"
@@ -25,6 +24,7 @@
         android:drawableStart="@drawable/login"
         android:hint="Email or username"
         android:inputType="textEmailAddress"
+        android:text="@{login.emailOrUsername}"
         android:onTextChanged="@{ (text, start, count, before) -> login.setValueEmailOrUsername(text.toString())}"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline"
@@ -38,8 +38,9 @@
         android:layout_marginTop="24dp"
         android:drawableStart="@drawable/lock"
         android:hint="Password"
-        android:onTextChanged="@{ (text, start, count, before) -> login.setValuePassword(text.toString())}"
+        android:text="@{login.password}"
         android:inputType="textPassword"
+        android:onTextChanged="@{ (text, start, count, before) -> login.setValuePassword(text.toString())}"
         app:layout_constraintEnd_toEndOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/evEmailOrUsername" />
@@ -47,13 +48,16 @@
     <TextView
         android:id="@+id/textWarning"
         style="@style/Centered_Horizontal_In_Parent"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text=""
         android:textColor="@android:color/holo_red_light"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/evPassword"
         tools:ignore="MissingConstraints" />
 
@@ -86,6 +90,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95" />
+
+    <ImageButton
+        android:id="@+id/btnHideShowPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/showHidePassword"
+        app:layout_constraintBottom_toBottomOf="@+id/evPassword"
+        app:layout_constraintEnd_toEndOf="@+id/evPassword"
+        app:layout_constraintTop_toTopOf="@+id/evPassword"
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

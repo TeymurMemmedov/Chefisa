@@ -4,15 +4,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.service.autofill.UserData
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import com.example.chefisa.databinding.FragmentLoginBinding
 import com.example.chefisa.models.LoginViewModel
+import com.example.chefisa.models.User
 import com.example.chefisa.ui.abstractFragments.BaseFragment
 import com.example.chefisa.ui.activities.MenuActivity
 import com.example.chefisa.utilities.AuthResults
+import com.example.chefisa.utilities.UIHelper.Companion.hideShowPassword
 import com.example.loginregister.UserManager
 
 class LoginFragment(): BaseFragment<FragmentLoginBinding>(
@@ -21,17 +24,19 @@ class LoginFragment(): BaseFragment<FragmentLoginBinding>(
 
     val userManager = UserManager()
 
+    var userData: User? = null
 
      var login = LoginViewModel()
+
 
      lateinit var inputs:List<EditText>
 
     val btnSubmitListener: View.OnClickListener
         get() = View.OnClickListener {
-            val isEmpty = inputs.any { it.text.isNullOrBlank() }
+            val isEmpty = inputs.find { it.text.isNullOrBlank() }
 
-            if (isEmpty) {
-                inputs.forEach { it.error = "This field required!" }
+            if (isEmpty!=null) {
+                isEmpty.error = "This field required!"
                 binding.textWarning.text = AuthResults.BLANK.message
             } else {
                 val (email, password) = login.emailOrUsername.toString() to login.password.toString()
@@ -45,7 +50,6 @@ class LoginFragment(): BaseFragment<FragmentLoginBinding>(
                 result.third?.let { user ->
                     executeDelayed(500) {
                         val intent = Intent(requireContext(), MenuActivity::class.java)
-                        intent.putExtra("USER", user)
                         startActivity(intent)
                         inputs.forEach { it.text.clear() }
                         binding.textWarning.text = ""
@@ -61,7 +65,15 @@ class LoginFragment(): BaseFragment<FragmentLoginBinding>(
 
 
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        userData = arguments?.getSerializable("USER") as? User
+        if(userData!=null){
+            login.setValueEmailOrUsername(userData!!.email)
+            login.setValuePassword(userData!!.password)
+        }
 
+    }
 
 
 
@@ -76,7 +88,12 @@ class LoginFragment(): BaseFragment<FragmentLoginBinding>(
             binding.evEmailOrUsername,
             binding.evPassword
         )
+        binding.btnHideShowPassword.setOnClickListener {
+            hideShowPassword(binding.evPassword,binding.btnHideShowPassword)
+        }
         binding.btnSubmit.setOnClickListener(btnSubmitListener)
         return result
     }
+
+
 }

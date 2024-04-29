@@ -52,6 +52,8 @@ class UserManager:UserManagerAbstract() {
                 return Triple(false,AuthResults.USERNAME_TAKEN.message,null)
             !registerModel.email!!.contains('@')->
                 return Triple(false,AuthResults.NOT_VALID_EMAIL.message,null)
+            registerModel.username!!.contains('@')->
+                return Triple(false,AuthResults.NOT_VALID_USERNAME.message,null)
             !registerModel.comparePasswordAndRePassword()->
                 return Triple(false,AuthResults.PASSWORDS_NOT_MATCHING.message,null)
             else-> {
@@ -60,12 +62,10 @@ class UserManager:UserManagerAbstract() {
                     registerModel.username!!,
                     registerModel.password!!
                 )
+
             userList.add(newUser)
 
                 return Triple(true,AuthResults.SUCCESSFUL_REGISTER.message,newUser)}
-
-
-
         }
 
     }
